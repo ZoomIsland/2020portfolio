@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  z-index: 50;
+  background: white;
+  border-bottom: 2px solid black;
+}
+main {
+  z-index: 30;
+}
+
+nav {
+  width: 100vw;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+.nav-right {
+  display: flex;
+  width: 325px;
+  font-size: 24px;
+}
+.nav-left h1 {
+  cursor: pointer;
+}
+.nav-right div {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+.nav-right div:hover {
+  text-decoration: underline;
+}
+
+.controls {
+  width: 100vw;
+  position: relative;
+}
+
+.aboutCards {
+  height: 350px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.spinner,
+.contactContainer,
+.aboutCards {
+  transition: height 250ms;
+  overflow: hidden;
+  position: absolute;
+}
+
+.spinner {
+  height: 0px;
+  width: 400px;
+}
+
+.contactContainer {
+  height: 0px;
+  width: 600px;
+  overflow: hidden;
+}
