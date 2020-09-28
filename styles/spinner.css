@@ -1,17 +1,20 @@
 :root {
-  --finalRotation: 360deg;
+  --finalRotation:360deg;
+  --startRotation:0deg;
+  --nextRotation:45deg;
 }
 
 @keyframes spin {
   0% {transform: rotate(0deg);}
-  25% {transform: rotate(90deg);}
-  50% {transform: rotate(180deg);}
-  75% {transform: rotate(270deg);}
   100% {transform: rotate(360deg);}
 }
 @keyframes finalSpin {
   0% {transform: rotate(0deg);}
   100% {transform: rotate(var(--finalRotation));}
+}
+@keyframes spinnerRotate {
+  0% {transform: rotate(var(--startRotation));}
+  100% {transform: rotate(var(--nextRotation));}
 }
 
 .outerSpinner {
@@ -32,6 +35,10 @@
   transform-origin: 50% 50%;
   clip-path: circle(49% at 50% 50%);
   animation-direction: forward;
+}
+
+#spinner {
+  transform: rotate(var(--startRotation));
 }
 
 .choice {

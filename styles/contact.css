@@ -1,6 +1,11 @@
+.contactContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .contactForm {
-  width: 90%;
-  height: 90%;
+  width: 600px;
+  height: 600px;
   background: white;
   border: 2px solid lightslategray;
   border-radius: 15px;
@@ -11,7 +16,7 @@
   align-items: center;
   font-family: 'Quicksand', sans-serif;
   position: absolute;
-  bottom: 10px;
+  top: 50px;
 }
 .contactForm h2 {
   font-size: 36px;
