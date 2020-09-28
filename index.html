@@ -24,105 +24,121 @@
     </nav>
   </header>
   <main>
-    <section class="controls">
-      <section class="aboutCards">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Fact One:</div>
-            <div class="card-back">1: Zach loves tarot</div>
-          </div>
+    <section class="homeScreen">
+      <h2>
+        Zach Milan is a front-end developer with a background in retail management and creative writing.
+      </h2>
+      <div class="featured">
+        <a href="https://tweets2020.netlify.app/">
+          <h3>Featured Project: Tweet2020</h3>
+        </a>
+        <p>Built over 48 hours as part of General Assembly's 2020 Election-themed hackathon. This site provides a tweet and two candidate options. Correct answers are tracked and a score is provided at the end. "Register to vote" is on every screen in order to entice voter engagement. </p>
+        <div class="tweetImgs">
+          <a href="https://tweets2020.netlify.app/">
+            <img src="./public/images/tweet2020home.png" />
+            <img src="./public/images/tweet2020question.png" />
+            <img src="./public/images/tweet2020end.png" />
+          </a>
         </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Fact Two:</div>
-            <div class="card-back">2: Zach loves board games</div>
-          </div>
+      </div>
+      <div class="moreProjects">More Projects</div>
+    </section>
+    <section class="aboutCards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Fact One:</div>
+          <div class="card-back">1: Zach loves tarot</div>
         </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Fact Three:</div>
-            <div class="card-back">3: Zach has two dogs</div>
-          </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Fact Two:</div>
+          <div class="card-back">2: Zach loves board games</div>
         </div>
-  
-      </section>
-      <section class="spinner">
-        <div class="outerSpinner">
-          <div id="spinner" class="spinCircle">
-            <a href="https://tarot.zachmagus.com">
-            <div class="choice1 choice" id="tarot">
-              <h3>Tarot Spread</h3>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Fact Three:</div>
+          <div class="card-back">3: Zach has two dogs</div>
+        </div>
+      </div>
+
+    </section>
+    <section class="spinner">
+      <div class="outerSpinner">
+        <div id="spinner" class="spinCircle">
+          <a href="https://tarot.zachmagus.com">
+          <div class="choice1 choice" id="tarot">
+            <h3>Tarot Spread</h3>
+          </div>
+          </a>
+          <a href="https://www.amazon.com/Skyline-Zach-Milan/dp/0997345705/">
+            <div class="choice2 choice" id="skyline">
+              <h3>Skyline</h3>
             </div>
-            </a>
-            <a href="https://www.amazon.com/Skyline-Zach-Milan/dp/0997345705/">
-              <div class="choice2 choice" id="skyline">
-                <h3>Skyline</h3>
-              </div>
-            </a>
-            <a href="http://wayfayer.herokuapp.com/">
-              <div class="choice3 choice" id="wayfayer">
-                <h3>Wayfayer</h3>
-              </div>
-            </a>
-            <a href="https://haikureviews.herokuapp.com/">
-              <div class="choice4 choice" id="haiku">
-                <h3>Haiku Review</h3>
-              </div>
-            </a>
-            <a href="https://evening-fjord-26177.herokuapp.com/">
-              <div class="choice5 choice" id="bookshelf">
-                <h3>My Bookshelf</h3>
-              </div>
-            </a>
-            <a href="https://zamagotchi.zachmagus.com/">
-              <div class="choice6 choice" id="zamagotchi">
-                <h3>Zamagotchi</h3>
-              </div>
-            </a>
-            <a href="https://spacewars.zachmagus.com/">
-              <div class="choice7 choice" id="spacewars">
-                <h3>Space Battle</h3>
-              </div>
-            </a>
-            <a href="https://tweets2020.netlify.app/">
-              <div class="choice8 choice" id="tweet2020">
-                <h3>Tweet2020</h3>
-              </div>
-            </a>
-          </div>
-          <button class="spinButton">
-            <p>Click for random project!</p>
-          </button>
+          </a>
+          <a href="http://wayfayer.herokuapp.com/">
+            <div class="choice3 choice" id="wayfayer">
+              <h3>Wayfayer</h3>
+            </div>
+          </a>
+          <a href="https://haikureviews.herokuapp.com/">
+            <div class="choice4 choice" id="haiku">
+              <h3>Haiku Review</h3>
+            </div>
+          </a>
+          <a href="https://evening-fjord-26177.herokuapp.com/">
+            <div class="choice5 choice" id="bookshelf">
+              <h3>My Bookshelf</h3>
+            </div>
+          </a>
+          <a href="https://zamagotchi.zachmagus.com/">
+            <div class="choice6 choice" id="zamagotchi">
+              <h3>Zamagotchi</h3>
+            </div>
+          </a>
+          <a href="https://spacewars.zachmagus.com/">
+            <div class="choice7 choice" id="spacewars">
+              <h3>Space Battle</h3>
+            </div>
+          </a>
+          <a href="https://tweets2020.netlify.app/">
+            <div class="choice8 choice" id="tweet2020">
+              <h3>Tweet2020</h3>
+            </div>
+          </a>
         </div>
-      </section>
-      <section class="contactContainer">
-        <form class="contactForm">
-          <h2>Say hello!</h2>
-          <div class="name">
-            <label for="name">Full Name:</label>
-            <input type="text" />
-          </div>
-          <div class="email">
-            <label for="email">Email:</label>
-            <input type="email" />
-          </div>
-          <div class="howFind">
-            <label for="howFind">How'd you find me?</label>
-            <select>
-              <option value="app">Application</option>
-              <option value="referral">Referral</option>
-              <option value="jobsite">Job Site</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="message">
-            <label for="message">Message:</label>
-            <textarea></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-  
-      </section>
+        <button class="spinButton">
+          <p>Click for random project!</p>
+        </button>
+      </div>
+    </section>
+    <section class="contactContainer">
+      <form class="contactForm">
+        <h2>Say hello!</h2>
+        <div class="name">
+          <label for="name">Full Name:</label>
+          <input type="text" />
+        </div>
+        <div class="email">
+          <label for="email">Email:</label>
+          <input type="email" />
+        </div>
+        <div class="howFind">
+          <label for="howFind">How'd you find me?</label>
+          <select>
+            <option value="app">Application</option>
+            <option value="referral">Referral</option>
+            <option value="jobsite">Job Site</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="message">
+          <label for="message">Message:</label>
+          <textarea></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </section>
   </main>
 

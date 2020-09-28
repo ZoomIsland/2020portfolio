@@ -2,18 +2,6 @@
   position: relative;
 }
 
-.card:nth-child(1) {
-  z-index: 10;
-}
-.card:nth-child(2) {
-  z-index: 9;
-  margin: 2px 0px 0px 2px;
-}
-.card:nth-child(3) {
-  z-index: 8;
-  margin: 4px 0px 0px 4px;
-}
-
 @keyframes zIndexChange {
   0% {z-index: 10;}
   99% {z-index: 10;}
@@ -54,6 +42,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  box-sizing: border-box;
   border-radius: 10px;
   border: 1px solid black;
 }
@@ -64,4 +53,16 @@
 .card-back {
   background: lightpink;
   transform: rotateY(180deg);
+}
+
+.card:nth-child(1) {
+  z-index: 10;
+}
+.card:nth-child(2) {
+  z-index: 9;
+  margin: 10px 0px 0px 5px;
+}
+.card:nth-child(3) {
+  z-index: 8;
+  margin: 20px 0px 0px 10px;
 }
