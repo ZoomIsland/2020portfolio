@@ -1,7 +1,7 @@
 const spinner = document.getElementById("spinner");
 const button = document.querySelector(".spinButton");
 
-button.addEventListener("click", () => {
+spinButton.addEventListener("click", () => {
   spinner.style.animation = "spin 1000ms 2 linear";
   const selectedDegree = degreePicker();
   document.documentElement.style.setProperty('--finalRotation', selectedDegree);

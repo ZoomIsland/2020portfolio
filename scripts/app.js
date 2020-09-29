@@ -1,32 +1,63 @@
+// Nav buttons
 const home = document.querySelector(".nav-home");
 const about = document.querySelector(".nav-about");
 const projects = document.querySelector(".nav-projects");
 const contact = document.querySelector(".nav-contact");
-
 home.addEventListener("click", navClick);
 about.addEventListener("click", () => navClick("about"));
 projects.addEventListener("click", () => navClick("projects"));
 contact.addEventListener("click", () => navClick("contact"));
 
-const projectRotate = setInterval(() => {
-  const root = document.documentElement;
-  const spinner = document.getElementById("spinner");
-  const currentRotation = getComputedStyle(document.documentElement).getPropertyValue('--finalRotation');
-  let startRotation = currentRotation;
-  if (startRotation === "360deg") {
-    startRotation = "0deg";
-  }
-  root.style.setProperty('--startRotation', startRotation);
-  const nextRotation = nextDegree(currentRotation);
-  spinner.style.animation = "spinnerRotate 1 250ms forwards";
+// Spin elements
+const spinner = document.getElementById("spinner");
+const spinButton = document.querySelector(".spinButton");
+let isPaused = false;
+const projectRotate = setInterval(() => rotateSpinner(), 5000);
+
+spinButton.addEventListener("click", () => {
+  isPaused = true;
+  spinner.style.animation = "spin 1000ms 2 linear";
+  const selectedDegree = degreePicker();
+  document.documentElement.style.setProperty('--finalRotation', selectedDegree);
   setTimeout(() => {
-    loadPage(nextRotation);
-    root.style.setProperty('--startRotation', nextRotation);
-    root.style.setProperty('--finalRotation', nextRotation);
-    root.style.setProperty('--nextRotation', nextDegree(nextRotation));
-    spinner.style.animation = "none";
-  }, 250);
-}, 5000);
+    spinner.style.animation = "finalSpin 1000ms 1 ease-out forwards"
+    setTimeout(() => {
+      loadPage(selectedDegree);
+    }, 1000)
+  }, 2000)
+})
+
+// About cards
+const cards = document.querySelectorAll(".card");
+for (const card of cards) {
+  card.addEventListener("click", () => {
+    card.style.animation = "zIndexChange 0.8s 1 forwards";
+    card.firstElementChild.style.animation = "cardFlip 0.8s 1 forwards";
+  })
+}
+
+
+
+function degreePicker() {
+  const randomDeg = Math.floor(Math.random() * 360);
+  if (randomDeg < 45) {
+    return "360deg";
+  } else if (randomDeg < 90) {
+    return "45deg";
+  } else if (randomDeg < 135) {
+    return "90deg";
+  } else if (randomDeg < 180) {
+    return "135deg";
+  } else if (randomDeg < 225) {
+    return "180deg";
+  } else if (randomDeg < 270) {
+    return "225deg";
+  } else if (randomDeg < 315) {
+    return "270deg";
+  } else {
+    return "315deg";
+  }
+}
 
 function nextDegree(degree) {
   switch(degree) {
@@ -51,13 +82,34 @@ function nextDegree(degree) {
   }
 }
 
+function rotateSpinner() {
+  if (!isPaused) {
+    const root = document.documentElement;
+    const currentRotation = getComputedStyle(document.documentElement).getPropertyValue('--finalRotation');
+    let startRotation = currentRotation;
+    if (startRotation === "360deg") {
+      startRotation = "0deg";
+    }
+    root.style.setProperty('--startRotation', startRotation);
+    const nextRotation = nextDegree(currentRotation);
+    spinner.style.animation = "spinnerRotate 1 250ms forwards";
+    setTimeout(() => {
+      loadPage(nextRotation);
+      root.style.setProperty('--startRotation', nextRotation);
+      root.style.setProperty('--finalRotation', nextRotation);
+      root.style.setProperty('--nextRotation', nextDegree(nextRotation));
+      spinner.style.animation = "none";
+    }, 250);
+  }
+}
+
 function navClick(element) {
-  const spinner = document.querySelector(".spinner");
+  const spinContainer = document.querySelector(".spinner");
   const contactForm = document.querySelector(".contactContainer");
   const aboutCards = document.querySelector(".aboutCards");
   const homeScreen = document.querySelector(".homeScreen");
   const spacer = document.querySelector(".spacer");
-  spinner.style.height = "0px";
+  spinContainer.style.height = "0px";
   contactForm.style.height = "0px";
   aboutCards.style.height = "0px";
   homeScreen.style.height = "0px";
@@ -73,7 +125,7 @@ function navClick(element) {
       break;
     case "projects":
       spacer.style.height = "200px";
-      spinner.style.height = "200px";
+      spinContainer.style.height = "200px";
       break;
     case "contact":
       spacer.style.height = "0px";
@@ -81,8 +133,9 @@ function navClick(element) {
       break;
     default:
       spacer.style.height = "185px";
-      spinner.style.height = "75px";
+      spinContainer.style.height = "75px";
       homeScreen.style.height = "auto";
+      isPaused = false;
   }
 }
 
@@ -100,10 +153,6 @@ function loadPage(degree) {
   for (const project of projects) {
     project.style.height = "0px";
   }
-
-    // makes all internal projects display none
-
-  // then switch makes one of them display auto
   switch(degree) {
     case "360deg":
       tweet2020.style.height = "auto";
