@@ -151,35 +151,35 @@ function loadPage(degree) {
   const spacewars = document.querySelector(".spacewars");
   const projects = [tweet2020, myBookshelf, haikuReview, wayfayer, skyline, tarot, zamagotchi, spacewars];
   for (const project of projects) {
-    project.style.height = "0px";
+    project.style.display = "none";
   }
   switch(degree) {
     case "360deg":
-      tweet2020.style.height = "auto";
+      tweet2020.style.display = "block";
       break;
     case "0deg":
-      tweet2020.style.height = "auto";
+      tweet2020.style.display = "block";
       break;
     case "45deg":
-      myBookshelf.style.height = "auto";
+      myBookshelf.style.display = "block";
       break;
     case "90deg":
-      haikuReview.style.height = "auto";
+      haikuReview.style.display = "block";
       break;
     case "135deg":
-      wayfayer.style.height = "auto";
+      wayfayer.style.display = "block";
       break;
     case "180deg":
-      skyline.style.height = "auto";
+      skyline.style.display = "block";
       break;
     case "225deg":
-      tarot.style.height = "auto";
+      tarot.style.display = "block";
       break;
     case "270deg":
-      zamagotchi.style.height = "auto";
+      zamagotchi.style.display = "block";
       break;
     case "315deg":
-      spacewars.style.height = "auto";
+      spacewars.style.display = "block";
       break;
   }
 }
