@@ -20,6 +20,7 @@ const projectRotate = setInterval(() => {
   const nextRotation = nextDegree(currentRotation);
   spinner.style.animation = "spinnerRotate 1 250ms forwards";
   setTimeout(() => {
+    loadPage(nextRotation);
     root.style.setProperty('--startRotation', nextRotation);
     root.style.setProperty('--finalRotation', nextRotation);
     root.style.setProperty('--nextRotation', nextDegree(nextRotation));
@@ -82,5 +83,54 @@ function navClick(element) {
       spacer.style.height = "185px";
       spinner.style.height = "75px";
       homeScreen.style.height = "auto";
+  }
+}
+
+function loadPage(degree) {
+  console.log(degree);
+  const tweet2020 = document.querySelector(".tweet2020");
+  const myBookshelf = document.querySelector(".myBookshelf");
+  const haikuReview = document.querySelector(".haikuReview");
+  const wayfayer = document.querySelector(".wayfayer");
+  const skyline = document.querySelector(".skyline");
+  const tarot = document.querySelector(".tarotProject");
+  const zamagotchi = document.querySelector(".zamagotchi");
+  const spacewars = document.querySelector(".spacewars");
+  const projects = [tweet2020, myBookshelf, haikuReview, wayfayer, skyline, tarot, zamagotchi, spacewars];
+  for (const project of projects) {
+    project.style.height = "0px";
+  }
+
+    // makes all internal projects display none
+
+  // then switch makes one of them display auto
+  switch(degree) {
+    case "360deg":
+      tweet2020.style.height = "auto";
+      break;
+    case "0deg":
+      tweet2020.style.height = "auto";
+      break;
+    case "45deg":
+      myBookshelf.style.height = "auto";
+      break;
+    case "90deg":
+      haikuReview.style.height = "auto";
+      break;
+    case "135deg":
+      wayfayer.style.height = "auto";
+      break;
+    case "180deg":
+      skyline.style.height = "auto";
+      break;
+    case "225deg":
+      tarot.style.height = "auto";
+      break;
+    case "270deg":
+      zamagotchi.style.height = "auto";
+      break;
+    case "315deg":
+      spacewars.style.height = "auto";
+      break;
   }
 }
