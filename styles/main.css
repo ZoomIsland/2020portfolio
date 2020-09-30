@@ -209,15 +209,15 @@ nav {
 }
 
 .aboutCards {
-  height: 0px;
-  width: 500px;
+  width: 421px;
   display: flex;
-  align-items: center;
+  margin-top: -450px;
+  transition: margin-top 250ms;
+  position: absolute;
 }
 
 .spinner,
 .contactContainer,
-.aboutCards,
 .homeScreen {
   transition: height 250ms;
   overflow: hidden;

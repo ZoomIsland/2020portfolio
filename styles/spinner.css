@@ -52,7 +52,7 @@
   font-size: 18px;
   position: absolute;
   top: 38%;
-  right: 6%;
+  right: 7%;
   width: 100%;
   text-align: center;
   color: white;
@@ -123,36 +123,6 @@
   transform-origin: 100% 100%;
   left: -8px;
 }
-
-/* .spinButton {
-  height: 45%;
-  width: 45%;
-  border-radius: 50%;
-  position: absolute;
-  border: 5px solid black;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.15),
-              -5px -5px 10px rgba(0,0,0,0.15),
-              -5px 5px 10px rgba(0,0,0,0.15),
-              5px -5px 10px rgba(0,0,0,0.15);
-  transition: 250ms;
-  display: flex;
-  justify-content: center;
-}
-.spinButton:hover {
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.25),
-              -5px -5px 10px rgba(0,0,0,0.25),
-              -5px 5px 10px rgba(0,0,0,0.25),
-              5px -5px 10px rgba(0,0,0,0.25);
-  transform: scale(1.05);
-}
-.spinButton p {
-  font-size: 20px;
-  width: 90%;
-  position: absolute;
-  bottom: 10%;
-} */
 
 .spinBtn,
 .pauseSpinnerBtn {

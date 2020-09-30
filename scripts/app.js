@@ -16,6 +16,7 @@ let isPaused = false;
 const projectRotate = setInterval(() => rotateSpinner(), 5000);
 spinButton.addEventListener("click", () => {
   isPaused = true;
+  pauseButton.innerHTML = "<p>Continue</p>"
   spinner.style.animation = "spin 1000ms 2 linear";
   const selectedDegree = degreePicker();
   document.documentElement.style.setProperty('--finalRotation', selectedDegree);
@@ -142,7 +143,7 @@ function navClick(element) {
   const spacer = document.querySelector(".spacer");
   spinContainer.style.height = "0px";
   contactForm.style.height = "0px";
-  aboutCards.style.height = "0px";
+  aboutCards.style.marginTop = "-450px";
   homeScreen.style.height = "0px";
 
   switch (element) {
@@ -152,12 +153,17 @@ function navClick(element) {
         project.classList.add("hidden");
       }
       allProjs.classList.add("hidden");
-      aboutCards.style.height = "350px";
+      lessProjs.classList.add("hidden");
+      aboutCards.style.marginTop = "25px";
       const cards = document.querySelectorAll(".card");
       for (const card of cards) {
         card.style.animation = "none";
         card.firstElementChild.style.animation = "none";
       }
+      setTimeout(() =>{
+        aboutCards.firstElementChild.style.animation = "zIndexChange 0.8s 1 forwards";
+        aboutCards.firstElementChild.firstElementChild.style.animation = "cardFlip 0.8s 1 forwards";
+      }, 250)
       break;
     case "projects":
       isPaused = true;
