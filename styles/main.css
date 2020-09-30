@@ -15,11 +15,11 @@ body {
 main {
   width: 100vw;
   min-height: calc(100vh - 78px);
-  
   z-index: 30;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 a {
@@ -37,12 +37,9 @@ button {
               -2px 2px 4px rgba(255,255,255,0.75),
               2px -2px 4px rgba(255,255,255,0.75),
               -2px -2px 4px rgba(255,255,255,0.75);
-  /* border: 2px solid white; */
   color: black;
-  /* background: rgb(98,80,91); */
   border-radius: 25px;
   border: none;
-  /* color: rgb(248,219,215); */
   font-size: 20px;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
@@ -60,7 +57,6 @@ button:hover {
 
 header {
   z-index: 50;
-  /* background: rgb(98,80,91); */
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
 }
 
@@ -71,7 +67,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 5px 0px;
-  /* color: rgb(248,219,215); */
   color: black;
 }
 .nav-left {
@@ -107,7 +102,7 @@ nav {
 }
 
 .homeScreen {
-  width: 100%;
+  width: 100vw;
   margin-top: 75px;
   display: flex;
   justify-content: center;
@@ -155,14 +150,17 @@ nav {
   width: 100%;
   display: flex;
 }
+.tweetImgs img,
+.projectImg img {
+  border-radius: 5px;
+  object-fit: contain;
+}
 .tweetImgs img {
   width: 30%;
   margin: 0px 5px;
-  border-radius: 5px;
 }
 .projectImg img {
   width: 100%;
-  border-radius: 5px;
 }
 .skyline .projectImg img {
   width: auto;
@@ -259,7 +257,8 @@ nav {
   display: none;
 }
 
-.allProjects {
+.allProjects,
+.lessProjects {
   background: rgba(255,255,255,0.5);
   padding: 15px 30px;
   margin: 10px;
@@ -268,6 +267,75 @@ nav {
   cursor: pointer;
   display: block;
 }
-.allProjects:hover {
+.allProjects:hover,
+.lessProjects:hover {
   text-decoration: underline;
+}
+.lessProjects {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .homeScreen h2 {
+    width: 90vw;
+    font-size: 20px;
+  }
+  .projectDetail {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectImg,
+  .tweetImgs {
+    width: 100%;
+    height: 216px;
+    display: flex;
+    justify-content: center;
+  }
+  .tweetImgs {
+    height: 180px;
+  }
+  .tweetImgs a {
+    justify-content: center;
+  }
+  .projectImg img {
+    height: 100%;
+  }
+  .skyline .projectImg img {
+    width: auto;
+    height: 216px;
+  }
+  .projectDesc {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  button {
+    font-size: 16px;
+    height: 40px;
+  }
+  .homeScreen h2 {
+    width: 95vw;
+    font-size: 18px;
+  }
+  nav {
+    font-size: 24px;
+  }
+  .nav-right {
+    font-size: 20px;
+  }
+  .contactContainer {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .projectButtons a {
+    width: 50%;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .nav-left,
+  .nav-right {
+    margin: 0 auto;
+  }
 }

@@ -16,6 +16,7 @@ const projectRotate = setInterval(() => rotateSpinner(), 5000);
 
 // Projects
 const allProjs = document.querySelector(".allProjects");
+const lessProjs = document.querySelector(".lessProjects");
 const tweet2020 = document.querySelector(".tweet2020");
 const myBookshelf = document.querySelector(".myBookshelf");
 const haikuReview = document.querySelector(".haikuReview");
@@ -31,6 +32,11 @@ allProjs.addEventListener("click", () => {
     project.style.display = "block";
   }
   allProjs.style.display = "none";
+  lessProjs.style.display = "block";
+})
+lessProjs.addEventListener("click", () => {
+  navClick();
+  allProjs.style.display = "block"
 })
 
 
@@ -153,6 +159,7 @@ function navClick(element) {
       break;
     default:
       allProjs.style.display = "block";
+      lessProjs.style.display = "none";
       for (const project of projects) {
         project.style.display = "none";
       }
