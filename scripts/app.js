@@ -146,12 +146,13 @@ function navClick(element) {
   aboutCards.style.marginTop = "-450px";
   homeScreen.style.height = "0px";
 
+  for (const project of projects) {
+    project.classList.add("hidden");
+  }
+
   switch (element) {
     case "about":
       isPaused = true;
-      for (const project of projects) {
-        project.classList.add("hidden");
-      }
       allProjs.classList.add("hidden");
       lessProjs.classList.add("hidden");
       aboutCards.style.marginTop = "25px";
@@ -175,15 +176,15 @@ function navClick(element) {
       spacer.style.height = "15px";
       break;
     case "contact":
+      isPaused = true;
+      allProjs.classList.add("hidden");
+      lessProjs.classList.add("hidden");
       spacer.style.height = "0px";
       contactForm.style.height = "calc(100vh - 78px)";
       break;
     default:
       allProjs.classList.remove("hidden");
       lessProjs.classList.add("hidden");
-      for (const project of projects) {
-        project.classList.add("hidden");
-      }
       tweet2020.classList.remove("hidden");
       spacer.style.height = "185px";
       spinContainer.style.height = "75px";

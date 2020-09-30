@@ -234,8 +234,6 @@ nav {
 .contactContainer {
   height: 0px;
   width: 100vw;
-  overflow: hidden;
-  background: rgba(0,0,0,0.25);
 }
 
 .allProjects,
@@ -319,5 +317,8 @@ nav {
   .nav-left,
   .nav-right {
     margin: 0 auto;
+  }
+  .aboutCards {
+    width: 350px;
   }
 }
