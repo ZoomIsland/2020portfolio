@@ -226,7 +226,9 @@ nav {
 
 .spinner {
   height: 75px;
-  width: 400px;
+  width: 500px;
+  display: flex; 
+  justify-content: center;
 }
 
 .contactContainer {
@@ -234,27 +236,6 @@ nav {
   width: 100vw;
   overflow: hidden;
   background: rgba(0,0,0,0.25);
-}
-
-.tweet2020,
-.myBookshelf,
-.haikuReview,
-.wayfayer,
-.skyline,
-.tarotProject,
-.zamagotchi,
-.spacewars {
-  display: block;
-  transition: 250ms;
-}
-.myBookshelf,
-.haikuReview,
-.wayfayer,
-.skyline,
-.tarotProject,
-.zamagotchi,
-.spacewars {
-  display: none;
 }
 
 .allProjects,
@@ -265,13 +246,14 @@ nav {
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-  display: block;
 }
 .allProjects:hover,
 .lessProjects:hover {
   text-decoration: underline;
 }
-.lessProjects {
+
+/* helper classes */
+.hidden {
   display: none;
 }
 

@@ -64,18 +64,6 @@
   letter-spacing: 1px;
 }
 
-/* .choice1,
-.choice3,
-.choice5,
-.choice7 {
-  background: rgb(125, 125, 125);
-}
-.choice2,
-.choice4,
-.choice6,
-.choice8 {
-  background: rgb(135, 187, 238);
-} */
 .choice1,
 .choice5 {
   background: rgb(151,219,225);
@@ -136,7 +124,7 @@
   left: -8px;
 }
 
-.spinButton {
+/* .spinButton {
   height: 45%;
   width: 45%;
   border-radius: 50%;
@@ -164,4 +152,35 @@
   width: 90%;
   position: absolute;
   bottom: 10%;
+} */
+
+.spinBtn,
+.pauseSpinnerBtn {
+  position: absolute;
+  bottom: 25px;
+  background: rgba(255,255,255,0.75);
+  width: 200px;
+  padding: 10px;
+  font-weight: bold;
+  border: 2px solid white;
+  transition: 250ms;
+  cursor: pointer;
+}
+.pauseSpinnerBtn {
+  left: 25px;
+  text-align: left;
+  border-radius: 15px 0px 0px 15px;
+  border-right: none;
+}
+.pauseSpinnerBtn:hover {
+  left: 5px;
+}
+.spinBtn {
+  right: 25px;
+  text-align: right;
+  border-radius: 0px 15px 15px 0px;
+  border-left: none;
+}
+.spinBtn:hover {
+  right: 5px;
 }

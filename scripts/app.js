@@ -10,9 +10,31 @@ contact.addEventListener("click", () => navClick("contact"));
 
 // Spin elements
 const spinner = document.getElementById("spinner");
-const spinButton = document.querySelector(".spinButton");
+const spinButton = document.querySelector(".spinBtn");
+const pauseButton = document.querySelector(".pauseSpinnerBtn")
 let isPaused = false;
 const projectRotate = setInterval(() => rotateSpinner(), 5000);
+spinButton.addEventListener("click", () => {
+  isPaused = true;
+  spinner.style.animation = "spin 1000ms 2 linear";
+  const selectedDegree = degreePicker();
+  document.documentElement.style.setProperty('--finalRotation', selectedDegree);
+  setTimeout(() => {
+    spinner.style.animation = "finalSpin 1000ms 1 ease-out forwards"
+    setTimeout(() => {
+      loadPage(selectedDegree);
+    }, 1000)
+  }, 2000)
+})
+pauseButton.addEventListener("click", () => {
+  if (isPaused) {
+    pauseButton.innerHTML = "<p>Pause</p>"
+    isPaused = false;
+  } else {
+    pauseButton.innerHTML = "<p>Continue</p>"
+    isPaused = true;
+  }
+})
 
 // Projects
 const allProjs = document.querySelector(".allProjects");
@@ -27,31 +49,14 @@ const zamagotchi = document.querySelector(".zamagotchi");
 const spacewars = document.querySelector(".spacewars");
 const projects = [tweet2020, myBookshelf, haikuReview, wayfayer, skyline, tarot, zamagotchi, spacewars];
 allProjs.addEventListener("click", () => {
-  isPaused = true;
-  for (const project of projects) {
-    project.style.display = "block";
-  }
-  allProjs.style.display = "none";
-  lessProjs.style.display = "block";
+  navClick("projects")
 })
 lessProjs.addEventListener("click", () => {
   navClick();
-  allProjs.style.display = "block"
+  allProjs.classList.remove("hidden");
 })
 
 
-spinButton.addEventListener("click", () => {
-  isPaused = true;
-  spinner.style.animation = "spin 1000ms 2 linear";
-  const selectedDegree = degreePicker();
-  document.documentElement.style.setProperty('--finalRotation', selectedDegree);
-  setTimeout(() => {
-    spinner.style.animation = "finalSpin 1000ms 1 ease-out forwards"
-    setTimeout(() => {
-      loadPage(selectedDegree);
-    }, 1000)
-  }, 2000)
-})
 
 // About cards
 const cards = document.querySelectorAll(".card");
@@ -142,6 +147,11 @@ function navClick(element) {
 
   switch (element) {
     case "about":
+      isPaused = true;
+      for (const project of projects) {
+        project.classList.add("hidden");
+      }
+      allProjs.classList.add("hidden");
       aboutCards.style.height = "350px";
       const cards = document.querySelectorAll(".card");
       for (const card of cards) {
@@ -150,20 +160,25 @@ function navClick(element) {
       }
       break;
     case "projects":
-      spacer.style.height = "215px";
-      spinContainer.style.height = "200px";
+      isPaused = true;
+      for (const project of projects) {
+        project.classList.remove("hidden");
+      }
+      allProjs.classList.add("hidden");
+      lessProjs.classList.remove("hidden");
+      spacer.style.height = "15px";
       break;
     case "contact":
       spacer.style.height = "0px";
       contactForm.style.height = "calc(100vh - 78px)";
       break;
     default:
-      allProjs.style.display = "block";
-      lessProjs.style.display = "none";
+      allProjs.classList.remove("hidden");
+      lessProjs.classList.add("hidden");
       for (const project of projects) {
-        project.style.display = "none";
+        project.classList.add("hidden");
       }
-      tweet2020.style.display = "block";
+      tweet2020.classList.remove("hidden");
       spacer.style.height = "185px";
       spinContainer.style.height = "75px";
       homeScreen.style.height = "auto";
@@ -173,35 +188,35 @@ function navClick(element) {
 
 function loadPage(degree) {
   for (const project of projects) {
-    project.style.display = "none";
+    project.classList.add("hidden");;
   }
   switch(degree) {
     case "360deg":
-      tweet2020.style.display = "block";
+      tweet2020.classList.remove("hidden");;
       break;
     case "0deg":
-      tweet2020.style.display = "block";
+      tweet2020.classList.remove("hidden");;
       break;
     case "45deg":
-      myBookshelf.style.display = "block";
+      myBookshelf.classList.remove("hidden");;
       break;
     case "90deg":
-      haikuReview.style.display = "block";
+      haikuReview.classList.remove("hidden");;
       break;
     case "135deg":
-      wayfayer.style.display = "block";
+      wayfayer.classList.remove("hidden");;
       break;
     case "180deg":
-      skyline.style.display = "block";
+      skyline.classList.remove("hidden");;
       break;
     case "225deg":
-      tarot.style.display = "block";
+      tarot.classList.remove("hidden");;
       break;
     case "270deg":
-      zamagotchi.style.display = "block";
+      zamagotchi.classList.remove("hidden");;
       break;
     case "315deg":
-      spacewars.style.display = "block";
+      spacewars.classList.remove("hidden");;
       break;
   }
 }
