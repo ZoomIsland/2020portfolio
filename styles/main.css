@@ -32,19 +32,30 @@ a:visited {
 button {
   width: 200px;
   height: 50px;
-  background: rgb(98,80,91);
+  background: rgba(151,219,225,0.75);
+  box-shadow: 2px 2px 4px rgba(255,255,255,0.75),
+              -2px 2px 4px rgba(255,255,255,0.75),
+              2px -2px 4px rgba(255,255,255,0.75),
+              -2px -2px 4px rgba(255,255,255,0.75);
+  /* border: 2px solid white; */
+  color: black;
+  /* background: rgb(98,80,91); */
   border-radius: 25px;
   border: none;
-  color: rgb(248,219,215);
+  /* color: rgb(248,219,215); */
   font-size: 20px;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: transform 250ms;
+  transition: 250ms;
 }
 button:hover {
-  transform: scale(.85);
+  transform: scale(.9);
+  box-shadow: 7px 7px 5px rgba(255,255,255,0.75),
+              -7px 7px 5px rgba(255,255,255,0.75),
+              7px -7px 5px rgba(255,255,255,0.75),
+              -7px -7px 5px rgba(255,255,255,0.75);
 }
 
 header {
@@ -108,15 +119,23 @@ nav {
 }
 .project {
   width: 85%;
-  padding: 5px;
+  padding: 5px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: rgba(255,255,255,0.5);
   border-radius: 25px;
+  margin-bottom: 25px;
 }
 .project h3 {
   margin: 10px 0px;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+.project h3:hover {
   text-decoration: underline;
 }
 .projectDetail {
@@ -145,31 +164,50 @@ nav {
   width: 100%;
   border-radius: 5px;
 }
+.skyline .projectImg img {
+  width: auto;
+  height: 30vw;
+}
+.skyline .projectDesc {
+  width: auto;
+}
 .project p {
   margin: 10px;
 }
 .descriptors {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 .descriptors p {
-  padding: 2px 6px;
+  padding: 5px 10px;
   margin: 5px;
-  background:grey;
+  background:rgba(255,255,255,0.75);
+  border: 2px solid white;
+  font-weight: bold;
   border-radius: 10px;
 }
 
 .projectButtons {
-  width: 85%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px;
 }
 .projectButtons a {
-  width: 45%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.projectButtons a:nth-child(1) {
+  margin-right: 25px;
 }
 .skyline .projectButtons {
   justify-content: center;
+}
+.skyline .projectButtons a:nth-child(1) {
+  margin-right: 0px;
 }
 
 .aboutCards {
@@ -200,9 +238,6 @@ nav {
   background: rgba(0,0,0,0.25);
 }
 
-.project {
-  overflow: hidden;
-}
 .tweet2020,
 .myBookshelf,
 .haikuReview,
@@ -222,4 +257,17 @@ nav {
 .zamagotchi,
 .spacewars {
   display: none;
+}
+
+.allProjects {
+  background: rgba(255,255,255,0.5);
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+}
+.allProjects:hover {
+  text-decoration: underline;
 }

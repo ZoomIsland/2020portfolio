@@ -1,11 +1,11 @@
 // Nav buttons
 const home = document.querySelector(".nav-home");
 const about = document.querySelector(".nav-about");
-const projects = document.querySelector(".nav-projects");
+const navProjects = document.querySelector(".nav-projects");
 const contact = document.querySelector(".nav-contact");
 home.addEventListener("click", navClick);
 about.addEventListener("click", () => navClick("about"));
-projects.addEventListener("click", () => navClick("projects"));
+navProjects.addEventListener("click", () => navClick("projects"));
 contact.addEventListener("click", () => navClick("contact"));
 
 // Spin elements
@@ -13,6 +13,26 @@ const spinner = document.getElementById("spinner");
 const spinButton = document.querySelector(".spinButton");
 let isPaused = false;
 const projectRotate = setInterval(() => rotateSpinner(), 5000);
+
+// Projects
+const allProjs = document.querySelector(".allProjects");
+const tweet2020 = document.querySelector(".tweet2020");
+const myBookshelf = document.querySelector(".myBookshelf");
+const haikuReview = document.querySelector(".haikuReview");
+const wayfayer = document.querySelector(".wayfayer");
+const skyline = document.querySelector(".skyline");
+const tarot = document.querySelector(".tarotProject");
+const zamagotchi = document.querySelector(".zamagotchi");
+const spacewars = document.querySelector(".spacewars");
+const projects = [tweet2020, myBookshelf, haikuReview, wayfayer, skyline, tarot, zamagotchi, spacewars];
+allProjs.addEventListener("click", () => {
+  isPaused = true;
+  for (const project of projects) {
+    project.style.display = "block";
+  }
+  allProjs.style.display = "none";
+})
+
 
 spinButton.addEventListener("click", () => {
   isPaused = true;
@@ -124,7 +144,7 @@ function navClick(element) {
       }
       break;
     case "projects":
-      spacer.style.height = "200px";
+      spacer.style.height = "215px";
       spinContainer.style.height = "200px";
       break;
     case "contact":
@@ -132,6 +152,11 @@ function navClick(element) {
       contactForm.style.height = "calc(100vh - 78px)";
       break;
     default:
+      allProjs.style.display = "block";
+      for (const project of projects) {
+        project.style.display = "none";
+      }
+      tweet2020.style.display = "block";
       spacer.style.height = "185px";
       spinContainer.style.height = "75px";
       homeScreen.style.height = "auto";
@@ -140,16 +165,6 @@ function navClick(element) {
 }
 
 function loadPage(degree) {
-  console.log(degree);
-  const tweet2020 = document.querySelector(".tweet2020");
-  const myBookshelf = document.querySelector(".myBookshelf");
-  const haikuReview = document.querySelector(".haikuReview");
-  const wayfayer = document.querySelector(".wayfayer");
-  const skyline = document.querySelector(".skyline");
-  const tarot = document.querySelector(".tarotProject");
-  const zamagotchi = document.querySelector(".zamagotchi");
-  const spacewars = document.querySelector(".spacewars");
-  const projects = [tweet2020, myBookshelf, haikuReview, wayfayer, skyline, tarot, zamagotchi, spacewars];
   for (const project of projects) {
     project.style.display = "none";
   }
