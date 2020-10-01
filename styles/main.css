@@ -141,6 +141,9 @@ nav {
   display: flex;
   flex-direction: column;
 }
+.projectDesc p {
+  font-size: 18px;
+}
 .tweetImgs,
 .projectImg {
   width: 50%;
@@ -253,6 +256,12 @@ nav {
 /* helper classes */
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .projectDesc p {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 850px) {
