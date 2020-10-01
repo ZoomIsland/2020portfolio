@@ -91,8 +91,8 @@ nav {
 }
 
 .spacer {
-  height: 185px;
-  transition: height 250ms;
+  height: 160px;
+  transition: height 500ms;
 }
 .controls {
   position: relative;
@@ -103,13 +103,12 @@ nav {
 
 .homeScreen {
   width: 100vw;
-  margin-top: 75px;
   display: flex;
   justify-content: center;
 }
 .homeScreen h2 {
   width: 635px;
-  margin: 25px 0px;
+  margin-top: 90px;
   text-align: center;
 }
 .project {
@@ -212,14 +211,13 @@ nav {
   width: 421px;
   display: flex;
   margin-top: -450px;
-  transition: margin-top 250ms;
+  transition: margin-top 500ms;
   position: absolute;
 }
 
 .spinner,
-.contactContainer,
 .homeScreen {
-  transition: height 250ms;
+  transition: margin-top 500ms;
   overflow: hidden;
   position: absolute;
 }
@@ -232,8 +230,10 @@ nav {
 }
 
 .contactContainer {
-  height: 0px;
+  position: absolute;
+  margin-top: -100vh;
   width: 100vw;
+  transition: margin-top 750ms;
 }
 
 .allProjects,

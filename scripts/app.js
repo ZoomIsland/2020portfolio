@@ -9,6 +9,7 @@ navProjects.addEventListener("click", () => navClick("projects"));
 contact.addEventListener("click", () => navClick("contact"));
 
 // Spin elements
+const root = document.documentElement;
 const spinner = document.getElementById("spinner");
 const spinButton = document.querySelector(".spinBtn");
 const pauseButton = document.querySelector(".pauseSpinnerBtn")
@@ -19,11 +20,16 @@ spinButton.addEventListener("click", () => {
   pauseButton.innerHTML = "<p>Continue</p>"
   spinner.style.animation = "spin 1000ms 2 linear";
   const selectedDegree = degreePicker();
-  document.documentElement.style.setProperty('--finalRotation', selectedDegree);
+  root.style.setProperty('--finalRotation', selectedDegree);
   setTimeout(() => {
     spinner.style.animation = "finalSpin 1000ms 1 ease-out forwards"
     setTimeout(() => {
       loadPage(selectedDegree);
+      root.style.setProperty('--startRotation', selectedDegree);
+      root.style.setProperty('--finalRotation', selectedDegree);
+      root.style.setProperty('--nextRotation', nextDegree(selectedDegree));
+      spinner.style.animation = "none";
+      root.style.setProperty('--nextRotation')
     }, 1000)
   }, 2000)
 })
@@ -120,7 +126,6 @@ function nextDegree(degree) {
 
 function rotateSpinner() {
   if (!isPaused) {
-    const root = document.documentElement;
     const currentRotation = getComputedStyle(document.documentElement).getPropertyValue('--finalRotation');
     let startRotation = currentRotation;
     if (startRotation === "360deg") {
@@ -140,15 +145,13 @@ function rotateSpinner() {
 }
 
 function navClick(element) {
-  const spinContainer = document.querySelector(".spinner");
   const contactForm = document.querySelector(".contactContainer");
   const aboutCards = document.querySelector(".aboutCards");
   const homeScreen = document.querySelector(".homeScreen");
   const spacer = document.querySelector(".spacer");
-  spinContainer.style.height = "0px";
-  contactForm.style.height = "0px";
+  contactForm.style.marginTop = "-100vh";
   aboutCards.style.marginTop = "-450px";
-  homeScreen.style.height = "0px";
+  homeScreen.style.marginTop = "-200px";
 
   for (const project of projects) {
     project.classList.add("hidden");
@@ -184,15 +187,19 @@ function navClick(element) {
       allProjs.classList.add("hidden");
       lessProjs.classList.add("hidden");
       spacer.style.height = "0px";
-      contactForm.style.height = "calc(100vh - 78px)";
+      contactForm.style.marginTop = "0px";
       break;
     default:
       allProjs.classList.remove("hidden");
       lessProjs.classList.add("hidden");
       tweet2020.classList.remove("hidden");
-      spacer.style.height = "185px";
-      spinContainer.style.height = "75px";
-      homeScreen.style.height = "auto";
+      // reset spinner
+      root.style.setProperty('--startRotation', "0deg");
+      root.style.setProperty('--finalRotation', "360deg");
+      root.style.setProperty('--nextRotation', "45deg");
+      //load elements
+      spacer.style.height = "160px";
+      homeScreen.style.marginTop = "0px";
       isPaused = false;
   }
 }
@@ -269,20 +276,16 @@ function formSubmit(e) {
   } else {
     revealError(messageDiv, true)
   }
-
-  console.log('Name: ', name);
-  console.log('Email: ', re.test(email));
-  console.log('Message: ', messageText);
-
+  
+  // api call
   if (name && re.test(email) && messageText) {
     data.name = name;
     data.email = email;
     data.howFind = document.getElementById("howFind").value;
     data.message = messageText;
     console.log(data)
+
+    // and then I send the data to my api
+    // api: https://contactzach.herokuapp.com/api/v1/messages/
   }
-    
-  // and then I send the data to my api
-  // can I test this prior to deployment onto squarespace?
-  // api: https://contactzach.herokuapp.com/api/v1/messages/
 }
