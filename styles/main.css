@@ -121,6 +121,9 @@ nav {
   border-radius: 25px;
   margin-bottom: 25px;
 }
+.tweet2020 {
+  max-height: 46vh;
+}
 .project h3 {
   margin: 10px 0px;
   width: 100%;
@@ -156,6 +159,11 @@ nav {
 .projectImg img {
   border-radius: 5px;
   object-fit: contain;
+}
+.tweetImgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .tweetImgs img {
   width: 30%;
@@ -269,6 +277,9 @@ nav {
     width: 90vw;
     font-size: 20px;
   }
+  .tweet2020 {
+    max-height: none;
+  }
   .projectDetail {
     flex-direction: column;
     align-items: center;
@@ -282,6 +293,7 @@ nav {
   }
   .tweetImgs {
     height: 180px;
+    max-width: 260px;
   }
   .tweetImgs a {
     justify-content: center;
