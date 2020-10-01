@@ -154,3 +154,24 @@
 .spinBtn:hover {
   right: 5px;
 }
+
+@media only screen and (max-width: 450px) {
+  .spinBtn,
+  .pauseSpinnerBtn {
+    width: 125px;
+    padding: 5px 10px;
+    bottom: 10px;
+  }
+  .spinBtn,
+  .spinBtn:hover {
+    right: 65px;
+  }
+  .pauseSpinnerBtn,
+  .pauseSpinnerBtn:hover {
+    left: 65px;
+  }
+  .spinBtn:hover,
+  .pauseSpinnerBtn:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Titillium Web', sans-serif;
 }
 
 body {
@@ -42,7 +43,6 @@ button {
   border: none;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Titillium Web', sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
   transition: 250ms;
@@ -91,7 +91,7 @@ nav {
 }
 
 .spacer {
-  height: 160px;
+  height: 170px;
   transition: height 500ms;
 }
 .controls {
@@ -303,6 +303,9 @@ nav {
   .nav-right {
     font-size: 20px;
   }
+  main {
+    min-height: calc(100vh - 60px);
+  }
   .contactContainer {
     width: 100vw;
   }
@@ -317,6 +320,12 @@ nav {
   .nav-left,
   .nav-right {
     margin: 0 auto;
+  }
+  main {
+    min-height: calc(100vh - 96px);
+  }
+  .homeScreen h2 {
+    font-size: 16px;
   }
   .aboutCards {
     width: 350px;

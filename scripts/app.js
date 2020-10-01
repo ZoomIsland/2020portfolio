@@ -198,7 +198,7 @@ function navClick(element) {
       root.style.setProperty('--finalRotation', "360deg");
       root.style.setProperty('--nextRotation', "45deg");
       //load elements
-      spacer.style.height = "160px";
+      spacer.style.height = "170px";
       homeScreen.style.marginTop = "0px";
       isPaused = false;
   }

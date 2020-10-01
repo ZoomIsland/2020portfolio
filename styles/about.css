@@ -38,6 +38,14 @@
   border: 2px solid white;
 }
 
+.card-front h3,
+.card-front p,
+.card-back h4,
+.card-back p,
+.card-back li {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .card-front {
   color: white;
   display: flex;
