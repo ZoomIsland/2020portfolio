@@ -232,13 +232,57 @@ function loadPage(degree) {
   }
 }
 
+function revealError(div, bool) {
+  if (bool) {
+    div.firstElementChild.classList.add("hidden")
+  } else {
+    div.firstElementChild.classList.remove("hidden")
+  }
+
+}
+
 function formSubmit(e) {
   e.preventDefault();
   const data = {};
-  data.name = document.getElementById("name").value;
-  data.email = document.getElementById("email").value;
-  data.howFind = document.getElementById("howFind").value;
-  data.message = document.getElementById("message").value;
-  console.log(data)
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const messageText = document.getElementById("message").value;
+
+  // validation
+  const re = /\S+@\S+\.\S+/;
+  const nameDiv = document.querySelector(".name");
+  if (!name) {
+    revealError(nameDiv, false);
+    errors.push('Name');
+  } else {
+    revealError(nameDiv, true);
+  }
+  const emailDiv = document.querySelector(".email")
+  if (!re.test(email)) {
+    revealError(emailDiv, false)
+  } else {
+    revealError(emailDiv, true)
+  }
+  const messageDiv = document.querySelector(".message");
+  if (!messageText) {
+    revealError(messageDiv, false)
+  } else {
+    revealError(messageDiv, true)
+  }
+
+  console.log('Name: ', name);
+  console.log('Email: ', re.test(email));
+  console.log('Message: ', messageText);
+
+  if (name && re.test(email) && messageText) {
+    data.name = name;
+    data.email = email;
+    data.howFind = document.getElementById("howFind").value;
+    data.message = messageText;
+    console.log(data)
+  }
+    
   // and then I send the data to my api
+  // can I test this prior to deployment onto squarespace?
+  // api: https://contactzach.herokuapp.com/api/v1/messages/
 }

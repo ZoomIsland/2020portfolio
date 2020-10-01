@@ -201,10 +201,16 @@
         <form class="contactForm">
           <h2>Say hello!</h2>
           <div class="name">
+            <div class="error hidden">
+              <p>* Please enter your name</p>
+            </div>
             <label for="name">Full Name:</label>
             <input id="name" type="text" />
           </div>
           <div class="email">
+            <div class="error hidden">
+              <p>* Please enter an email address</p>
+            </div>
             <label for="email">Email:</label>
             <input id="email" type="email" />
           </div>
@@ -218,6 +224,9 @@
             </select>
           </div>
           <div class="message">
+            <div class="error hidden">
+              <p>* Please enter a message to send</p>
+            </div>
             <label for="message">Message:</label>
             <textarea id="message"></textarea>
           </div>

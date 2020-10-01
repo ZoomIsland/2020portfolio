@@ -28,7 +28,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
+
+.error {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.error p {
+  color: red;
+}
+/* can remove once css is merged */
+.hidden {
+  display: none;
+}
+
 .name label,
 .email label,
 .howFind label,
