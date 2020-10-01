@@ -39,10 +39,16 @@
   font-weight: bold;
 }
 .name input,
-.email input {
-  width: 100%;
-  height: 28px;
+.email input,
+.message textarea {
+  box-sizing: border-box;
+  padding: 2px 4px;
   font-size: 24px;
+  width: 100%;
+}
+.name input,
+.email input {
+  height: 28px;
 }
 .howFind {
   width: 85%;
@@ -51,14 +57,13 @@
 }
 .howFind select {
   font-size: 24px;
-  padding: 2px;
   font-family: 'Quicksand', sans-serif;
   width: 100%;
   margin: 0 auto;
+  padding: 2px;
 }
 .message textarea {
   resize: none;
-  width: 100%;
   height: 150px;
 }
 

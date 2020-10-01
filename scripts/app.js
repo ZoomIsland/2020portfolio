@@ -68,8 +68,12 @@ for (const card of cards) {
   })
 }
 
+// Contact form
+const formSubmitBtn = document.querySelector(".formSubmit");
+formSubmitBtn.addEventListener("click", formSubmit)
 
 
+// functions
 function degreePicker() {
   const randomDeg = Math.floor(Math.random() * 360);
   if (randomDeg < 45) {
@@ -226,4 +230,15 @@ function loadPage(degree) {
       spacewars.classList.remove("hidden");;
       break;
   }
+}
+
+function formSubmit(e) {
+  e.preventDefault();
+  const data = {};
+  data.name = document.getElementById("name").value;
+  data.email = document.getElementById("email").value;
+  data.howFind = document.getElementById("howFind").value;
+  data.message = document.getElementById("message").value;
+  console.log(data)
+  // and then I send the data to my api
 }
