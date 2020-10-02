@@ -290,5 +290,6 @@ async function formSubmit(e) {
       },
       body: JSON.stringify(data),
     });
+    navClick();
   }
 }
