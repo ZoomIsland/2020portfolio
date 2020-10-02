@@ -248,9 +248,8 @@ function revealError(div, bool) {
 
 }
 
-function formSubmit(e) {
+async function formSubmit(e) {
   e.preventDefault();
-  const data = {};
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const messageText = document.getElementById("message").value;
@@ -279,13 +278,17 @@ function formSubmit(e) {
   
   // api call
   if (name && re.test(email) && messageText) {
+    const data = {};
     data.name = name;
     data.email = email;
     data.howFind = document.getElementById("howFind").value;
     data.message = messageText;
-    console.log(data)
-
-    // and then I send the data to my api
-    // api: https://contactzach.herokuapp.com/api/v1/messages/
+    let response = await fetch('https://contactzach.herokuapp.com/api/v1/messages/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
   }
 }

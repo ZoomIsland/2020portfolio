@@ -39,7 +39,6 @@
 .error p {
   color: red;
 }
-/* can remove once css is merged */
 .hidden {
   display: none;
 }
