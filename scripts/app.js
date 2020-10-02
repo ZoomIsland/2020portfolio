@@ -151,7 +151,9 @@ function navClick(element) {
   const spacer = document.querySelector(".spacer");
   contactForm.style.marginTop = "-100vh";
   aboutCards.style.marginTop = "-450px";
-  homeScreen.style.marginTop = "-200px";
+  // homeScreen.style.maxHeight = "0px";
+  spacer.style.height = "0px";
+  homeScreen.style.marginTop = "-250px";
 
   for (const project of projects) {
     project.classList.add("hidden");
@@ -186,7 +188,6 @@ function navClick(element) {
       isPaused = true;
       allProjs.classList.add("hidden");
       lessProjs.classList.add("hidden");
-      spacer.style.height = "0px";
       contactForm.style.marginTop = "0px";
       break;
     default:
@@ -198,7 +199,6 @@ function navClick(element) {
       root.style.setProperty('--finalRotation', "360deg");
       root.style.setProperty('--nextRotation', "45deg");
       //load elements
-      spacer.style.height = "170px";
       homeScreen.style.marginTop = "0px";
       isPaused = false;
   }

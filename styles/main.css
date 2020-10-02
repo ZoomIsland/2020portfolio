@@ -89,7 +89,7 @@ nav {
 }
 
 .spacer {
-  height: 170px;
+  height: 0px;
   transition: height 500ms;
 }
 .controls {
@@ -102,13 +102,18 @@ nav {
 .homeScreen {
   width: 100vw;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  transition: margin-top 500ms;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0px;
 }
 .homeScreen h2 {
-  width: 85%;
-  max-width: 1060px;
-  margin-top: 90px;
+  width: 70%;
   text-align: center;
+  margin: 10px;
 }
 .project {
   width: 85%;
@@ -226,18 +231,13 @@ nav {
   position: absolute;
 }
 
-.spinner,
-.homeScreen {
-  transition: margin-top 500ms;
-  overflow: hidden;
-  position: absolute;
-}
-
 .spinner {
   height: 75px;
   width: 500px;
   display: flex; 
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .contactContainer {
@@ -274,7 +274,7 @@ nav {
 
 @media only screen and (max-width: 850px) {
   .homeScreen h2 {
-    width: 90vw;
+    width: 80%;
     font-size: 20px;
   }
   .tweet2020 {
@@ -315,7 +315,6 @@ nav {
     height: 40px;
   }
   .homeScreen h2 {
-    width: 95vw;
     font-size: 18px;
   }
   nav {
@@ -344,9 +343,6 @@ nav {
   }
   main {
     min-height: calc(100vh - 96px);
-  }
-  .homeScreen h2 {
-    font-size: 16px;
   }
   .aboutCards {
     width: 350px;
