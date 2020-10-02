@@ -206,35 +206,35 @@ function navClick(element) {
 
 function loadPage(degree) {
   for (const project of projects) {
-    project.classList.add("hidden");;
+    project.classList.add("hidden");
   }
   switch(degree) {
     case "360deg":
-      tweet2020.classList.remove("hidden");;
+      tweet2020.classList.remove("hidden");
       break;
     case "0deg":
-      tweet2020.classList.remove("hidden");;
+      tweet2020.classList.remove("hidden");
       break;
     case "45deg":
-      haikuReview.classList.remove("hidden");;
+      haikuReview.classList.remove("hidden");
       break;
     case "90deg":
-      myBookshelf.classList.remove("hidden");;
+      myBookshelf.classList.remove("hidden");
       break;
     case "135deg":
-      spacewars.classList.remove("hidden");;
+      spacewars.classList.remove("hidden");
       break;
     case "180deg":
-      tarot.classList.remove("hidden");;
+      tarot.classList.remove("hidden");
       break;
     case "225deg":
-      wayfayer.classList.remove("hidden");;
+      wayfayer.classList.remove("hidden");
       break;
     case "270deg":
-      zamagotchi.classList.remove("hidden");;
+      zamagotchi.classList.remove("hidden");
       break;
     case "315deg":
-      skyline.classList.remove("hidden");;
+      skyline.classList.remove("hidden");
       break;
   }
 }
