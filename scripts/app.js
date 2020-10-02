@@ -216,25 +216,25 @@ function loadPage(degree) {
       tweet2020.classList.remove("hidden");;
       break;
     case "45deg":
-      myBookshelf.classList.remove("hidden");;
-      break;
-    case "90deg":
       haikuReview.classList.remove("hidden");;
       break;
+    case "90deg":
+      myBookshelf.classList.remove("hidden");;
+      break;
     case "135deg":
-      wayfayer.classList.remove("hidden");;
+      spacewars.classList.remove("hidden");;
       break;
     case "180deg":
-      skyline.classList.remove("hidden");;
+      tarot.classList.remove("hidden");;
       break;
     case "225deg":
-      tarot.classList.remove("hidden");;
+      wayfayer.classList.remove("hidden");;
       break;
     case "270deg":
       zamagotchi.classList.remove("hidden");;
       break;
     case "315deg":
-      spacewars.classList.remove("hidden");;
+      skyline.classList.remove("hidden");;
       break;
   }
 }
